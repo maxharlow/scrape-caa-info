@@ -1,0 +1,14 @@
+{
+    "name": "scrape-caa-info",
+    "private": true,
+    "dependencies": {
+	"highland": "2.0.x",
+	"request": "2.44.x",
+        "cheerio": "0.16.x",
+	"csv-parser": "1.4.x",
+	"csv-write-stream": "0.2.x"
+    },
+    "scripts": {
+        "start": "node caa-info"
+    }
+}
