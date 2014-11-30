@@ -44,17 +44,17 @@ var detailPages = detailLocations.flatMap(http)
 var results = detailPages.map(function (response) {
     var document = cheerio.load(response.body)
     return {
-	registrationMark: document('#currentModule_currentModule_Registration').text(),
-	registrationPreviousId: document('#currentModule_currentModule_PreviousID').text(),
-	registrationStatus: document('#currentModule_currentModule_Status').text(),
-	registrationStatusTo: document('#currentModule_currentModule_ToLabel').text(),
-	registrationStatusReason: document('#currentModule_currentModule_Reason').text(),
-	registrationCurrentDate: document('#currentModule_currentModule_CurrentRegDate').text(),
-	registrationDeregistrationDate: document('#currentModule_currentModule_DeRegDate').text(),
-	aircraftManufacturer: document('#currentModule_currentModule_Manufacturer').text(),
-	aircraftType: document('#currentModule_currentModule_Type').text(),
-	ownerStatus: document('#currentModule_currentModule_OwnershipStatus').text(),
-	ownerRegistration: document('#currentModule_currentModule_RegisteredOwners').text()
+	registrationMark: document('#currentModule_currentModule_Registration').html(),
+	registrationPreviousId: document('#currentModule_currentModule_PreviousID').html(),
+	registrationStatus: document('#currentModule_currentModule_Status').html(),
+	registrationStatusTo: document('#currentModule_currentModule_ToLabel').html(),
+	registrationStatusReason: document('#currentModule_currentModule_Reason').html(),
+	registrationCurrentDate: document('#currentModule_currentModule_CurrentRegDate').html(),
+	registrationDeregistrationDate: document('#currentModule_currentModule_DeRegDate').html(),
+	aircraftManufacturer: document('#currentModule_currentModule_Manufacturer').html(),
+	aircraftType: document('#currentModule_currentModule_Type').html(),
+	ownerStatus: document('#currentModule_currentModule_OwnershipStatus').html(),
+	ownerRegistration: document('#currentModule_currentModule_RegisteredOwners').html().replace(/<br>/g, '\n')
     }
 })
 
