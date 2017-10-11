@@ -2,12 +2,10 @@
     "name": "scrape-caa-info",
     "private": true,
     "dependencies": {
-	"highland": "2.0.x",
-	"request": "2.44.x",
-        "cheerio": "0.16.x",
-	"csv-write-stream": "0.2.x"
-    },
-    "scripts": {
-        "start": "node caa-info"
+        "highland": "2.11.x",
+        "request": "2.83.x",
+        "retry-me": "1.0.x",
+        "cheerio": "0.22.x",
+        "csv-write-stream": "2.0.x"
     }
 }
